@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кирүү | Университет Платформасы</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#f8f9fa] h-screen flex items-center justify-center">
+
+    <div class="w-full max-w-md p-8">
+        <div class="bg-white rounded-3xl shadow-xl p-10 border border-gray-100">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-2xl mb-4">
+                    <i class="fas fa-university text-blue-600 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Добро пожаловать</h2>
+                <p class="text-gray-400 text-sm mt-2 font-medium">Введите ваши данные для входа</p>
+            </div>
+
+            <form action="{{ route('login') }}" method="POST" class="space-y-6">
+                @csrf
+                <div>
+                    <label class="block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest">Электронная почта</label>
+                    <input type="email" name="email" required 
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-blue-500 transition text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-black uppercase text-gray-400 mb-2 tracking-widest">Пароль</label>
+                    <input type="password" name="password" required 
+                        class="w-full bg-gray-50 border border-gray-200 rounded-xl p-4 outline-none focus:ring-2 focus:ring-blue-500 transition text-sm">
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-xl font-black uppercase tracking-widest shadow-lg hover:bg-blue-700 transition transform active:scale-95">
+                    Войти в систему
+                </button>
+            </form>
+
+            <div class="mt-8 text-center">
+                <a href="/" class="text-xs font-bold text-gray-400 hover:text-blue-600 transition uppercase tracking-tighter">
+                    <i class="fas fa-arrow-left mr-1"></i> На главную
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
